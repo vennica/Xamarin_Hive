@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HIVE"
+			 x:Class="HIVE.MasterPage"
+			 Padding="0,40,0,0"
+			 Icon="hamburger.png"
+			 Title="HIVE master">
+    <StackLayout BackgroundColor="#333">
+        <Grid BackgroundColor="White" HeightRequest="200">
+            <Image Source="hive.jpg" Aspect="AspectFit"  />
+
+            <StackLayout Padding="0,20,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                <!--
+                <Image Source="icon.png"  VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image.Clip>
+                        <EllipseGeometry Center="170,90" RadiusX="90" RadiusY="90" />
+                    </Image.Clip>
+                </Image>
+            <CircleImage BorderColor="White" BorderThickness="2" Source="icon.png" Aspect="AspectFill" WidthRequest="85" HeightRequest="85" />
+                <Label Text="HIVE" TextColor="White" FontSize="Large" />
+                -->
+            </StackLayout>
+        </Grid>
+        <ListView x:Name="listView">
+           <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:MasterPageItem}">
+                    <local:MasterPageItem Title="Choose a Locker" IconSource="ic_action_lock.png" TargetType="{x:Type local:ContactsPage}"/>
+                    <local:MasterPageItem Title="Wallet" IconSource="ic_account_balance_wallet.png" TargetType="{x:Type local:WalletPage}"/>
+                    <local:MasterPageItem Title="Settings" IconSource="ic_action_settings.png" TargetType="{x:Type local:ReminderPage}"/>
+                    
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1" Text="{Binding Title}" TextColor="White" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HIVE.UnlockPage"
+             Title ="Unlock it!">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White" x:Name="LockerGrid" ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="POP Station (Orchard)" TextColor="Black"  HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="40" BackgroundColor="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="CenterAndExpand"/>
+            <Image Source="Northpoint.jpg" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Text="Location: 2 Orchard Link, Singapore 237978" TextColor="Gray" FontSize="Medium" BackgroundColor="White" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            
+           <!--
+            <StackLayout Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand">
+
+                <Label Text="Price: HNY10/h"  TextColor="Gray" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Start" BackgroundColor="White"/>
+                <Label Text="Details: - No SD Card Provided"  TextColor="Gray" FontSize="Small"  HorizontalOptions="Start"  BackgroundColor="White"/>
+                <Label Text="- Battery lasts 10 hours"  TextColor="Gray" FontSize="Small"  HorizontalOptions="Center" BackgroundColor="White"/>
+                <Label Text="Created by: "  TextColor="Gray" FontSize="Small"  HorizontalOptions="Start" BackgroundColor="White"/>
+                <Image Source="Owner.jpeg" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+            -->
+
+            <Button x:Name="ButtonRent" FontSize="Medium" Text="PUT IN!" BackgroundColor="YellowGreen" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="StartAndExpand"/>
+            <Button x:Name="ButtonReturn" FontSize="Medium" Text="TAKE IT!" BackgroundColor="#00C853" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" VerticalOptions="StartAndExpand"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

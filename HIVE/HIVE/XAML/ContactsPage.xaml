@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="HIVE.ContactsPage"
+			 Title="Hive Home"
+             BackgroundImage="Register.jpg"
+             NavigationPage.HasNavigationBar="True">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Home" Clicked="OnBackToHomeButtonClicked" Priority="1" />
+        <ToolbarItem Icon="hive_menu_backward.gif" Priority="0"/>
+    </ContentPage.ToolbarItems>
+    <Grid BackgroundColor="White" x:Name="LockerGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="locker_1.jpg" Grid.Row="0" Grid.Column="0" />
+        <Label Text="Raffles Place" TextColor="Black" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="StartAndExpand" FontAttributes="Bold" FontSize="Large" BackgroundColor="White"/>
+        <Label Text="One Marina Bivd
+               Available: 5/9"  TextColor="Gray" FontSize="Medium" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" BackgroundColor="White"/>
+        <StackLayout Grid.Row="1" Grid.Column="0">
+            <Button Text="View" VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" BackgroundColor="Orange" BorderRadius="50"/>
+        </StackLayout>
+        <!--
+        <Label Text="One Marina Bivd" TextColor="Red" FontSize="Small" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" />
+        -->
+        <Image Source="locker_1.jpg" Grid.Row="0" Grid.Column="1" />
+        <Label Text="Orchard" TextColor="Black" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="StartAndExpand" FontAttributes="Bold" FontSize="Large" BackgroundColor="White"/>
+        <Label Text="Ngee Ann City
+               Available: 3/9"  TextColor="Gray" FontSize="Medium" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" BackgroundColor="White"/>
+        <StackLayout Grid.Row="1" Grid.Column="1">
+            <Button Text="View" VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" BackgroundColor="Orange" />
+        </StackLayout>
+        <Image Source="locker_1.jpg" Grid.Row="0" Grid.Column="2" />
+        <Label Text="One North" TextColor="Black" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="StartAndExpand" FontAttributes="Bold" FontSize="Large" BackgroundColor="White"/>
+        <Label Text="Fusionopolis One
+               Available: 0/9"  TextColor="Gray" FontSize="Medium" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" BackgroundColor="White"/>
+        <StackLayout Grid.Row="1" Grid.Column="2">
+            <Button Text="View" VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" BackgroundColor="Orange"/>
+        </StackLayout>
+
+    </Grid>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Grid layout goes here!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+            <!--
+            <StackLayout Spacing="0" BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="Start">
+                <Image Source="locker_1.jpg" WidthRequest="200" HeightRequest="500"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                
+                
+                <Label TextColor="Black"
+                       FontSize="Medium" Text="Raffles Place"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"/>
+                <Label TextColor="Gray"
+                       FontSize="Micro" Text="One Marina Bivd"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"/>
+                <Label TextColor="Gray"
+                       FontSize="Small" Text="5 Listings"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"/>
+                <Label TextColor="Gray"
+                       FontSize="Small" Text="4 Available Slots"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalOptions="Center"/>
+            </StackLayout>
+                -->
+        <!--
+                <Image Source="locker_1.jpg"/>
+                <Label Grid.Row="0" Grid.Column="0" Text="Raffles Place"  FontSize="Medium" VerticalOptions="Center"/>
+                <Label Grid.Row="0" Grid.Column="0" Text="One Marina Bivd" FontSize="Default" VerticalOptions="Center"/>
+                <Label Grid.Row="0" Grid.Column="0" Text="5 Listings" FontSize="Small" VerticalOptions="Center"/>
+                <Label Grid.Row="0" Grid.Column="0" Text="4 Available Slots" FontSize="Small" VerticalOptions="Center"/>
+            -->
+    </ContentPage.Content>
+</ContentPage>

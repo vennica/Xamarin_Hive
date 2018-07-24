@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HIVE"
+             x:Class="HIVE.CategoryPage"
+             Title="Hive Home">
+    
+
+    <ContentPage.Content>
+        <!--
+             <control:CarouselViewControl ItemsSource="{Binding MyDataSource}" Position="{Binding Position, Mode=TwoWay}">
+                <control:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Name}" TextColor="Black" />
+                    </DataTemplate>
+                </control:CarouselViewControl.ItemTemplate>
+            </control:CarouselViewControl>
+            <local:CarouselIndicators IndicatorHeight="16" IndicatorWidth="16" UnselectedIndicator="unselected_circle.png" SelectedIndicator="selected_circle.png" Position="{Binding Position}" ItemsSource="{Binding MyDataSource}" />
+            -->
+        <ScrollView BackgroundColor="FloralWhite" >
+            <ListView x:Name="listView" ItemTapped="OncategorySelected" RowHeight="320">
+                <ListView.ItemsSource >
+                    <x:Array Type="{x:Type local:CategoryItemCS}">
+                        <local:CategoryItemCS Title="Clothes" ImageSource="clothes.jpg" TargetType="{x:Type local:ClothesPage}"/>
+                        <local:CategoryItemCS Title="Camera" ImageSource="camera.jpg" TargetType="{x:Type local:CameraPage}" />
+                        <local:CategoryItemCS Title="Accessories" ImageSource="accessories.jpg" TargetType="{x:Type local:AccessoryPage}" />
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowSpacing="10" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/> 
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Opacity="0.5" Source="{Binding ImageSource}" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" StyleClass="Rounded"/>
+                                <Label Text="{Binding Title}"  VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="30" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <!--
+            <Grid RowSpacing="30" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="300"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="600"/>
+                </Grid.ColumnDefinitions>
+               
+                
+                <Image Opacity="0.5" Source="clothes.jpg" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="Clothes" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="30" />
+
+                <Image Opacity="0.5" Source="camera.jpg" Grid.Row="1" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                <Label Text="Camera" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="30" />
+
+                <Image Opacity="0.5" Source="accessories.jpg" Grid.Row="2" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                <Label Text=" Women Accessories" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" FontSize="30"  VerticalTextAlignment="Center"/>
+                -->
+            </ListView>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>
