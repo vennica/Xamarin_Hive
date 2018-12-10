@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-			 x:Class="HIVE.WalletPage"
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HIVE.WalletPage"
              xmlns:local="clr-namespace:HIVE"
 			 Title="My Wallet"
              NavigationPage.HasBackButton="True"
@@ -21,36 +21,35 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        
         <StackLayout Grid.Row="0" Grid.Column="0">
-            <Button Grid.Row="0" Grid.Column="0" BackgroundColor="White" BorderRadius="0" Image="ic_scan_meitu_1.png" BorderColor="Transparent" VerticalOptions="CenterAndExpand"/>
+            <Button Grid.Row="0" Grid.Column="0" Clicked="OnScanCliked"  BackgroundColor="White" BorderRadius="0" Image="ic_scan_meitu_1.png"  VerticalOptions="CenterAndExpand" BorderColor="Transparent"/>
         </StackLayout>
         <StackLayout Grid.Row="0" Grid.Column="1">
-            <Button Grid.Row="0" Grid.Column="1" BorderRadius="0" VerticalOptions="CenterAndExpand" BackgroundColor="White" Image="ic_pay_meitu_1.jpg" BorderColor="Transparent"/>
+            <Button Grid.Row="0" Grid.Column="1" Clicked="OnTopUpCliked" BackgroundColor="White" BorderRadius="0" VerticalOptions="CenterAndExpand" Image="ic_pay_meitu_1.jpg" BorderColor="Transparent"/>
         </StackLayout>
         <StackLayout Grid.Row="0" Grid.Column="2">
-            <Button VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="2" BorderRadius="0"  BackgroundColor="White" Image="ic_card__meitu_2.png" BorderColor="Transparent"/>
+            <Button Grid.Row="0" Grid.Column="2" Clicked="OnCardCliked" BackgroundColor="White"  BorderRadius="0" VerticalOptions="CenterAndExpand" Image="ic_card__meitu_2.png" BorderColor="Transparent"/>
         </StackLayout>
-            <!--
+        <!--
             <Label Text="Scan" Grid.Row="1" Grid.Column="0" TextColor="Orange" FontAttributes="Bold" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
             -->
         <StackLayout Grid.Row="1" Grid.Column="0">
-            <Label Text="Balance" Grid.Row="2" Grid.Column="0" VerticalOptions="Start" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="Balance" Grid.Row="2" Grid.Column="0" VerticalOptions="Start" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center"/>
         </StackLayout>
         <StackLayout Grid.Row="1" Grid.Column="2">
-            <Label Text="$600.00" Grid.Row="2" Grid.Column="2" VerticalOptions="Start" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="$600.00" Grid.Row="2" Grid.Column="2" VerticalOptions="Start" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center"/>
         </StackLayout>
-        
-    </Grid>
-
-    <ContentPage.Content>
-        <StackLayout>
+        <!--
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="3">
             <ListView x:Name="listView" ItemTapped="OncategorySelected">
                 <ListView.ItemsSource>
                     <x:Array Type="{x:Type local:MenuItems}">
-                        <local:MenuItems Title="History Transaction" TargetType="{x:Type local:HistoryPage}"/>
-                        <local:MenuItems Title="Top Up" TargetType="{x:Type local:TopUpPage}"/>
-                        <local:MenuItems Title="Withdraw" TargetType="{x:Type local:WithdrawPage}"/>
-
+                        
+                        <local:MasterPageItem Title="Top Up" IconSource="ic_action_lock.png" TargetType="{x:Type local:ContactsPage}"/>
+                        <local:MasterPageItem Title="Withdraw" IconSource="ic_account_balance_wallet.png" TargetType="{x:Type local:WalletPage}"/>
+                        
+                        <local:MenuItems Title="Transaction History" IconSource="ic_action_settings.png" TargetType="{x:Type local:HistoryPage}"/>
                     </x:Array>
                 </ListView.ItemsSource>
                 <ListView.ItemTemplate>
@@ -61,40 +60,15 @@
                                     <ColumnDefinition Width="30"/>
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1" Text="{Binding Title}" TextColor="Black" />
+                                <Label Grid.Column="1" Text="{Binding Title}" FontSize="Small" TextColor="Black" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-        <!--
-        <ScrollView BackgroundColor="FloralWhite" >
-            <ListView x:Name="listView">
-                <ListView.ItemsSource>
-                    <x:Array Type="{x:Type local:MasterPageItem}">
-                        <local:MasterPageItem Title="Top Up" IconSource="ic_action_lock.png" TargetType="{x:Type local:ContactsPage}"/>
-                        <local:MasterPageItem Title="Withdraw" IconSource="ic_account_balance_wallet.png" TargetType="{x:Type local:WalletPage}"/>
-                        <local:MasterPageItem Title="Transaction History" IconSource="ic_action_settings.png" TargetType="{x:Type local:SettingPage}"/>
-
-                    </x:Array>
-                </ListView.ItemsSource>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="5,10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="30"/>
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{Binding IconSource}" />
-                                <Label Grid.Column="1" Text="{Binding Title}" TextColor="White" />
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </ScrollView>
         -->
-    </ContentPage.Content>
+    </Grid>
+    
+
 </ContentPage>

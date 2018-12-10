@@ -17,6 +17,16 @@
                            PlaceholderColor="White" HeightRequest="40"   
                            IsPassword="True"  
                            TextColor="White"/>
+                    <Entry Text="{Binding ConfirmPassword}"
+               Placeholder="confirm password"
+               IsPassword="True" />
+                    <!--
+                    <Button Command="{Binding RegisterCommand}" 
+                Text="Register"
+                TextColor="White"
+                FontSize="30"
+                BackgroundColor="Red" />
+                    -->
                 </StackLayout>
             </Frame>
             <Button Clicked="OnRegisterButtonClicked" Text="Register" TextColor="White"  

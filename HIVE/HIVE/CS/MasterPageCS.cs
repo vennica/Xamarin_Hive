@@ -24,7 +24,7 @@ namespace HIVE
             {
                 Title = "TodoList",
                 IconSource = "hive_menu_backward.gif",
-                TargetType = typeof(TodoListPageCS)
+                TargetType = typeof(WalletPage)
             });
             masterPageItems.Add(new MasterPageItem
             {

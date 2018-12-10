@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HIVE.XAML.CardPage"
+             Title="My Cards"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="True">
+    <ContentPage.Content>
+        <Grid x:Name="PaymentGrid" BackgroundColor="White" RowSpacing ="0" ColumnSpacing ="0" >
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="50"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            -->
+            <Image Grid.Row ="0" Grid.ColumnSpan="2" Source="DBSCard.PNG" Aspect="AspectFit" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Label Grid.Row ="1" Grid.ColumnSpan="2" Text="DBS Visa Debit Card" Font="Bold" TextColor="Black" FontSize="Medium" VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
+            <Label Grid.Row ="2" Grid.Column="0" Text="Card Number" TextColor="Gray" FontSize="Small" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+            <Label Grid.Row ="2" Grid.Column="1" Text="Visa ····8577" TextColor="Gray" FontSize="Small" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+           
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

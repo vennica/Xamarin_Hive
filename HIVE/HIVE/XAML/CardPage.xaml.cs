@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace HIVE
+namespace HIVE.XAML
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class WithdrawPage : ContentPage
+	public partial class CardPage : ContentPage
 	{
-		public WithdrawPage ()
+		public CardPage ()
 		{
 			InitializeComponent ();
-		}
+            
+
+        }
 	}
 }

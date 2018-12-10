@@ -2,12 +2,40 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HIVE.HistoryPage"
+             xmlns:local="clr-namespace:HIVE"
              Title="History">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="History Transaction!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
+        <!--
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="3">
+            <ListView x:Name="listView" ItemTapped="OncategorySelected">
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type local:MenuItems}">
+                        <local:MenuItems Title="History Transaction" />
+                        <local:MenuItems Title="Top Up" />
+                        <local:MenuItems Title="Withdraw" />
+
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="1" Text="{Binding Title}" FontSize="Small" TextColor="Black" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        -->
     </ContentPage.Content>
 </ContentPage>

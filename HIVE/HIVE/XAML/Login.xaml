@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HIVE.XAML.Login"
+             xmlns:viewModels="clr-namespace:HIVE.ViewModels"
              BackgroundImage="Login.jpg"
              NavigationPage.HasNavigationBar="false">
     <!--
@@ -18,6 +19,9 @@
         </Grid>
         </Grid>
     -->
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
@@ -38,10 +42,12 @@
             <Button Clicked="OnLoginButtonClicked" Text="Login" TextColor="White"  
                     FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
                     BackgroundColor="#088da5"/>
+            
             <Button Clicked="OnRegisterButtonClicked" Text="Register" TextColor="White"  
                     FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
                     BackgroundColor="#088da5" />
             <!--
+            
             <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White"  
                     FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
                     BackgroundColor="#088da5" />

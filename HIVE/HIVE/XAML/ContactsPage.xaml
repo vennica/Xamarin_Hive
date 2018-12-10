@@ -25,7 +25,7 @@
         <Label Text="One Marina Bivd
                Available: 5/9"  TextColor="Gray" FontSize="Medium" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" BackgroundColor="White"/>
         <StackLayout Grid.Row="1" Grid.Column="0">
-            <Button Text="View" VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" BackgroundColor="Orange" BorderRadius="50"/>
+            <Button Text="View" VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" BackgroundColor="Orange" BorderRadius="20"/>
         </StackLayout>
         <!--
         <Label Text="One Marina Bivd" TextColor="Red" FontSize="Small" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" />
@@ -42,7 +42,7 @@
         <Label Text="Fusionopolis One
                Available: 0/9"  TextColor="Gray" FontSize="Medium" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="End" BackgroundColor="White"/>
         <StackLayout Grid.Row="1" Grid.Column="2">
-            <Button Text="View" VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" BackgroundColor="Orange"/>
+            <Button Text="View" VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" BackgroundColor="Orange" BorderRadius="20"/>
         </StackLayout>
 
     </Grid>

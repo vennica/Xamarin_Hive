@@ -14,8 +14,8 @@ namespace HIVE
 		{
             
 			InitializeComponent();
+            //MainPage = new NavigationPage(new Login());
             MainPage = new NavigationPage(new Login());
-            //MainPage = new HIVE.MainPage();
 
             /*
             if (!IsUserLoggedIn)
@@ -27,17 +27,17 @@ namespace HIVE
                 MainPage = new NavigationPage(new HIVE.MainPage());
             }
             */
-           
-            
-            
-            
-           
-            
+
+
+
+
+
+
 
 
         }
 
-		protected override void OnStart ()
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}

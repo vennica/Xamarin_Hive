@@ -2,12 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HIVE.TopUpPage"
-             Title="Top Up">
+             Title="Top Up"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        
+        <StackLayout BackgroundColor="White">
+            <!--
+            <StackLayout Orientation="Horizontal" Padding="10,10">
+                <Button Text="Back" HorizontalOptions="StartAndExpand" Clicked="backClicked" FontAttributes="Bold" FontSize="Small" BackgroundColor="Orange" BorderRadius="20" />
+                <Button Text="Forward" HorizontalOptions="End" Clicked="forwardClicked" FontAttributes="Bold" FontSize="Small" BackgroundColor="Orange" BorderRadius="20"/>
+            </StackLayout>
+            -->
+            <WebView x:Name="Browser" WidthRequest="1000" HeightRequest="1000" />
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

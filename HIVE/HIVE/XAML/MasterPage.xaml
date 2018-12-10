@@ -8,7 +8,11 @@
 			 Title="HIVE master">
     <StackLayout BackgroundColor="#333">
         <Grid BackgroundColor="White" HeightRequest="200">
-            <Image Source="hive.jpg" Aspect="AspectFit"  />
+            <Label x:Name="Text" Text="{Binding Text}" 
+               TextColor="Black" FontSize="Large" VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
+
+            <Label x:Name="Email" Text="{Binding Email}" />
+            <Image Source="hive.jpg" Aspect="AspectFit" Opacity="0.5" />
 
             <StackLayout Padding="0,20,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
@@ -27,7 +31,7 @@
            <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:MasterPageItem}">
                     <local:MasterPageItem Title="Choose a Locker" IconSource="ic_action_lock.png" TargetType="{x:Type local:ContactsPage}"/>
-                    <local:MasterPageItem Title="Wallet" IconSource="ic_account_balance_wallet.png" TargetType="{x:Type local:WalletPage}"/>
+                    <local:MasterPageItem Title="My Wallet" IconSource="ic_account_balance_wallet.png" TargetType="{x:Type local:WalletPage}"/>
                     <local:MasterPageItem Title="Settings" IconSource="ic_action_settings.png" TargetType="{x:Type local:ReminderPage}"/>
                     
                 </x:Array>

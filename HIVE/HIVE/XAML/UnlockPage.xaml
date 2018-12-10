@@ -8,7 +8,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -18,9 +18,9 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Text="POP Station (Orchard)" TextColor="Black"  HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="40" BackgroundColor="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="CenterAndExpand"/>
+            <Label Text="POP Station (Orchard)" TextColor="Black"  HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="30" BackgroundColor="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
             <Image Source="Northpoint.jpg" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-            <Label Text="Location: 2 Orchard Link, Singapore 237978" TextColor="Gray" FontSize="Medium" BackgroundColor="White" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Text="Location: 2 Orchard Link, Singapore 237978" TextColor="Gray" FontSize="Small" BackgroundColor="White" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             
            <!--
             <StackLayout Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand">
