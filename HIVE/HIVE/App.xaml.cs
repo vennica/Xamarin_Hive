@@ -15,7 +15,7 @@ namespace HIVE
             
 			InitializeComponent();
             //MainPage = new NavigationPage(new Login());
-            MainPage = new NavigationPage(new Login());
+            MainPage = new MainPage();
 
             /*
             if (!IsUserLoggedIn)

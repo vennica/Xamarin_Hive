@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZXing.Net.Mobile.Forms;
-using Microsoft.Azure.Devices.Client;
+//using Microsoft.Azure.Devices.Client;
 using Newtonsoft.Json;
 using System.Diagnostics;
 
@@ -18,7 +18,7 @@ namespace HIVE
     public partial class UnlockPage : ContentPage
     {
         public int messageSequence = 0;
-        static ForeignersDevice republicDevice;
+        //static ForeignersDevice republicDevice;
         ZXingScannerPage scanPage;
         public UnlockPage()
         {
@@ -28,10 +28,10 @@ namespace HIVE
             ButtonReturn.Clicked += ButtonReturn_Clicked;
 
             //connect to device
-            republicDevice = new ForeignersDevice("ForeignersDevice");
-            ReceiveC2dAsync();
+           // republicDevice = new ForeignersDevice("ForeignersDevice");
+           // ReceiveC2dAsync();
 
-            republicDevice.SendDevicetoCloudMessageAsync("Android Connected");
+           // republicDevice.SendDevicetoCloudMessageAsync("Android Connected");
         }
 
 
@@ -46,8 +46,10 @@ namespace HIVE
                 //Do something with result
                 Device.BeginInvokeOnMainThread(() =>
                 {
+                   /* 
                     string targetDevice = "{\"device\":\"webapp\",\"command\":\"1\",\"mn\":\"writeLine\",\"targetDevice\":\"" + result.Text + "\"}";
                     republicDevice.SendDevicetoCloudMessageAsync(targetDevice);
+                    */
                     //republicDevice.SendDevicetoCloudMessageAsync($"{{'device':'webapp','command':'1','mn':'writeLine', 'targetDevice':'{result.Text}'}}");
                     Navigation.PopModalAsync();
                     DisplayAlert("Item status", result.Text, "OK");
@@ -67,8 +69,9 @@ namespace HIVE
                 //Do something with result
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    string targetDevice = "{\"device\":\"webapp\",\"command\":\"0\",\"mn\":\"writeLine\",\"targetDevice\":\"" + result.Text + "\"}";
+                   /* string targetDevice = "{\"device\":\"webapp\",\"command\":\"0\",\"mn\":\"writeLine\",\"targetDevice\":\"" + result.Text + "\"}";
                     republicDevice.SendDevicetoCloudMessageAsync(targetDevice);
+                    */
                     // republicDevice.SendDevicetoCloudMessageAsync($"{{'device':'webapp','command':'0','mn':'writeLine', 'targetDevice':'{result.Text}'}}");
                     Navigation.PopModalAsync();
                     DisplayAlert("Item Detail", result.Text, "OK");
@@ -85,33 +88,33 @@ namespace HIVE
             public int state { get; set; }
         }
 
-        public async void ReceiveC2dAsync()
-        {
-            var deviceClient = DeviceClient.CreateFromConnectionString("HostName=ForeignersCloud.azure-devices.net;DeviceId=ForeignersDevice;SharedAccessKey=2bioLY1acuVjqGvYK9Qo4IpkPpWDUXaKMvjaKCbw408=", TransportType.Http1);
-            Debug.WriteLine("\nReceiving cloud to device messages from service");
-            while (true)
-            {
-                Message receivedMessage = await deviceClient.ReceiveAsync();
-                if (receivedMessage == null) continue;
-                byte[] data = receivedMessage.GetBytes();
-                Debug.WriteLine("Received message: {0}", Encoding.UTF8.GetString(data, 0, data.Length));
+        //public async void ReceiveC2dAsync()
+        //{
+        //    var deviceClient = DeviceClient.CreateFromConnectionString("HostName=ForeignersCloud.azure-devices.net;DeviceId=ForeignersDevice;SharedAccessKey=2bioLY1acuVjqGvYK9Qo4IpkPpWDUXaKMvjaKCbw408=", TransportType.Http1);
+        //    Debug.WriteLine("\nReceiving cloud to device messages from service");
+        //    while (true)
+        //    {
+        //        Message receivedMessage = await deviceClient.ReceiveAsync();
+        //        if (receivedMessage == null) continue;
+        //        byte[] data = receivedMessage.GetBytes();
+        //        Debug.WriteLine("Received message: {0}", Encoding.UTF8.GetString(data, 0, data.Length));
 
 
 
-                await deviceClient.CompleteAsync(receivedMessage);
-            }
+        //        await deviceClient.CompleteAsync(receivedMessage);
+        //    }
 
 
-        }
-        private static async Task<string> ReceiveC2dAsync(DeviceClient deviceClient)
-        {
-            await Task.Delay(1000);
-            Message receivedMessage = await deviceClient.ReceiveAsync(TimeSpan.FromSeconds(1));
-            byte[] data = receivedMessage.GetBytes();
-            string a = String.Format("Received message: {0}", Encoding.UTF8.GetString(data, 0, data.Length));
-            await deviceClient.CompleteAsync(receivedMessage);
-            return a;
-        }
+        //}
+        //private static async Task<string> ReceiveC2dAsync(DeviceClient deviceClient)
+        //{
+        //    await Task.Delay(1000);
+        //    Message receivedMessage = await deviceClient.ReceiveAsync(TimeSpan.FromSeconds(1));
+        //    byte[] data = receivedMessage.GetBytes();
+        //    string a = String.Format("Received message: {0}", Encoding.UTF8.GetString(data, 0, data.Length));
+        //    await deviceClient.CompleteAsync(receivedMessage);
+        //    return a;
+        //}
 
     }
 }
