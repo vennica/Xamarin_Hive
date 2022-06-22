@@ -8,7 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
     <PackageReference Include="Microsoft.Azure.Devices.Client.PCL" Version="1.0.16" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="PCLCrypto" Version="2.0.147" />
     <PackageReference Include="Tizen.NET" Version="4.0.0" />
     <PackageReference Include="Xam.Plugins.Settings" Version="2.5.8" />
